@@ -1,14 +1,15 @@
+<!-- Creación del formulario -->
 <div class="row">
     <div class="card col-3">
         <div class="card-body">
             <form [formGroup] = "categoriaForm" (ngSubmit)="agregarCategoria()">
                 <div class="form-group">
                     <label for="categoria">Nombre de la categoria</label>
-                    <input type="text" class="form-control" id="categoria" aria-describedby="emailHelp" formControlName="nombreCategoria">
+                    <input type="text" class="form-control" id="categoria" formControlName="nombreCategoria">
                 </div>
                 <div class="form-group">
                     <label for="categoria">Datos</label>
-                    <input type="text" class="form-control" id="categoria" aria-describedby="emailHelp" formControlName="datosCategoria">
+                    <input type="text" class="form-control" id="categoria" formControlName="datosCategoria">
                     <small id="emailHelp" class="form-text text-muted">Datos separados por una , ejem: 1,2,3</small>
                 </div>
                 <div class="form-group">
@@ -22,6 +23,7 @@
         </div>
     </div>
 
+    <!-- Creación de la tabla  -->
     <div class="col-9">
         <table class="table">
             <thead class="thead-dark text-center">

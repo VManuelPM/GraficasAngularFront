@@ -85,8 +85,4 @@ export class CategoriaComponent implements OnInit {
     })
   }
 
-  actualizarCategoria() {
-
-  }
-
 }
