@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="card col-3">
+        <div class="card-body">
+            <form [formGroup] = "categoriaForm" (ngSubmit)="agregarCategoria()">
+                <div class="form-group">
+                    <label for="categoria">Nombre de la categoria</label>
+                    <input type="text" class="form-control" id="categoria" aria-describedby="emailHelp" formControlName="nombreCategoria">
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Datos</label>
+                    <input type="text" class="form-control" id="categoria" aria-describedby="emailHelp" formControlName="datosCategoria">
+                    <small id="emailHelp" class="form-text text-muted">Datos separados por una , ejem: 1,2,3</small>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Color de la gráfica</label>
+                    <input class="form-control" [(colorPicker)]="color" [style.background]="color" formControlName="colorCategoria" readonly/>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success">{{textButton}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-9">
+        <table class="table">
+            <thead class="thead-dark text-center">
+                <tr>
+                    <th scope="col">NOMBRE_CATE</th>
+                    <th scope="col">DATOS_CATE</th>
+                    <th scope="col">COLOR_CATE</th>
+                    <th scope="col">OPCION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let categoria of categorias">
+                    <td>{{categoria.NOMBRE_CATE}}</td>
+                    <td>{{categoria.DATOS_CATE}}</td>
+                    <td>
+                    <input class="form-control" [(colorPicker)]="categoria.COLOR_CATE" [style.background]="categoria.COLOR_CATE" readonly disabled/>
+                    </td>
+                    <td>
+                        <button class="btn btn-success" [routerLink]="['/categoria', categoria.PK_CATE]">Editar</button>
+                        <button class="btn btn-danger" (click)="borrarCategoria(categoria.PK_CATE)">Borrar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
