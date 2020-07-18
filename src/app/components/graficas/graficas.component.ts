@@ -63,7 +63,7 @@ export class GraficasComponent implements OnInit {
 
     for (const index in datos) {
       this.barChartData.push({ data: datos[index], label: nombreCategoria[index] });
-      this.chartColors.push({backgroundColor: colores[index]})
+      this.chartColors.push({backgroundColor: colores[index]});
     }
 
   }
