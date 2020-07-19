@@ -9,15 +9,16 @@
                 </div>
                 <div class="form-group">
                     <label for="categoria">Datos</label>
-                    <input type="text" class="form-control" id="categoria" formControlName="datosCategoria">
+                    <input type="text" class="form-control" id="categoria" formControlName="datosCategoria" required>
                     <small id="emailHelp" class="form-text text-muted">Datos separados por una , ejem: 1,2,3</small>
                 </div>
                 <div class="form-group">
                     <label for="categoria">Color de la gráfica</label>
+                    <!-- Input que permite seleccionar el color de la paleta -->
                     <input class="form-control" [(colorPicker)]="color" [style.background]="color" formControlName="colorCategoria" readonly/>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success">{{textButton}}</button>
+                    <button class="btn btn-success" [disabled]="!categoriaForm.valid">{{textButton}}</button>
                 </div>
             </form>
         </div>

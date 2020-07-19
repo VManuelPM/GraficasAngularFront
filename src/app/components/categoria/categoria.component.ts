@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from '../../services/categoria.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -24,8 +24,8 @@ export class CategoriaComponent implements OnInit {
     this.obtenerParametroUrl();
     this.categoriaForm = this.fb.group({
       idCategoria: [''],
-      nombreCategoria: [''],
-      datosCategoria: [''],
+      nombreCategoria: ['', Validators.required],
+      datosCategoria: ['', Validators.required],
       colorCategoria: ['']
     });
   }

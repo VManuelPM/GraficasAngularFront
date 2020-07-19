@@ -9,7 +9,6 @@ export class CategoriaService {
 
   baseUrl = environment.baseUrl;
  
-
   constructor(protected http: HttpClient) { }
 
   getCategorias() {
@@ -33,5 +32,3 @@ export class CategoriaService {
   } 
 
 }
-
-
